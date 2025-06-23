@@ -1,0 +1,50 @@
+tr {
+width: 100%;
+display: inline-table;
+table-layout: fixed;
+}
+
+table{
+ /*height: calc(70vh);              /** <-- Select the height of the table*/
+ display: -moz-groupbox;    /* Firefox Bad Effect*/
+}
+tbody{
+  overflow-y: scroll; 
+  height: 93%;
+  /*calc(80vh - 50%)    height: calc(100% + 400px);     
+  /*height: calc(100% - 100px);            /*  <-- Select the height of the body*/
+  width: 100%;
+  position: absolute;
+}
+.dyntab{
+	height: calc(100vh - 99px);
+}
+@media (min-width: 768px) {
+    .dyntab {
+	height: calc(100vh - 99px);    
+    }
+    tbody{
+    	height:93%;
+    }
+}
+@media (min-width: 992px) {
+    .dyntab {
+	height: calc(100vh - 99px);    
+    }
+    tbody{
+    	height:93%;
+    }
+}
+@media (min-width: 1200px) {
+    .dyntab {
+	height: calc(100vh - 99px);    
+    }
+    tbody{
+    	height:93%;
+    }
+}
+
+html,
+body {
+  min-height: 100%;
+}

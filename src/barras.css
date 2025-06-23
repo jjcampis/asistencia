@@ -1,0 +1,14 @@
+#cont-bar{
+float: left;
+}
+.bars{
+width:120px;
+height: 30px;
+background: orange;
+}
+.bar-new{
+box-shadow: #FFF 0px 0px 2px inset;
+}
+.barnim{
+transition: box-shadow 3s;
+}

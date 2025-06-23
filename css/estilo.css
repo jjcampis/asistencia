@@ -1,0 +1,39 @@
+.sortorder:after {
+    content: '\25b2';
+  }
+.sortorder.reverse:after {
+    content: '\25bc';
+  }
+.tabla th{
+background: #1B9AA3;
+color:#FFF;
+}
+.abajo{
+	position: absolute;
+	margin: 0 auto;
+	bottom:0;
+}
+.guardar{
+	height: 100%;
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+.letras{
+	font-size: x-large;
+    font-weight: bolder;
+}
+.activo{
+  background: #0CC;
+}
+
+.backgg{
+  width: 110%;
+  height: 100%; 
+  position: absolute;
+  left: -5%;
+  z-index: 4;
+  background: rgba(0,0,0,0.6);
+  top: 0;
+}

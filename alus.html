@@ -1,0 +1,72 @@
+<div class="row no-gutter bg-primary">
+	<div class="col-md-12 col-xs-12">
+	<div class="form-group letras col-md-12 col-xs-12">
+	<label class="col-md-6 col-xs-6 text-right">Alumnos de:</label>	
+	<div class="col-md-4 col-xs-4 text-left">
+	<select class="bg-primary" ng-model="curso" ng-change="reg.cambiacur()" role="button">
+			<option value="">Curso</option>
+			<option value="egresados">egresados</option>
+			<option value="Teens Maker">Teens Maker</option>
+			<option value="Maker Junior">Maker Junior</option>
+	</select>
+	</div>		
+		<div ng-click="reg.form.que = 'salir'; reg.login();" role="button" class="col-xs-2 col-md-2 text-center btn-primary">Salir!
+		</div>
+	</div>
+	
+</div>
+</div>
+
+<div class="backgg" ng-show="attr == 'presentes'">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header bg-primary">
+        <button type="button" class="close" ng-click="reg.cierra('presentes')">&times;</button>
+        <h4 class="modal-title">Indique Estado del alumno</h4>
+      </div>
+      <div class="modal-body">
+     <form name="estadoalumno"  ng-submit="reg.guardar()">
+     <div class="radio">
+      <label><input type="radio" name="estadoal" ng-model="reg.estadoal" value="1" ng-required="attr == 'presentes'">Presente</label>
+    </div>
+     <div class="radio">
+      <label><input type="radio" name="estadoal" ng-model="reg.estadoal" value="3" ng-required="attr == 'presentes'">Tardanza</label>
+    </div>
+     <div class="radio">
+      <label><input type="radio" name="estadoal" ng-model="reg.estadoal" value="2" ng-required="attr == 'presentes'">Ausente</label>
+    </div>
+     
+
+      <div class="modal-footer">
+        <button type="submit" class="col-md-12 col-xs-12 btn-primary guardar">Guardar!</button>
+      </div>
+   </form>
+      </div>
+    </div>
+</div>
+</div>
+
+
+
+	<div class="row no-gutter">
+		<div class="col-md-12 col-xs-12 dyntab">
+			<table class="table tabla">
+				<thead>
+					<tr>
+					<th role="button" ng-repeat="llavep in llavesalus track by $index" class="sortorder" ng-class="{reverse:reverse && predicate === llavep}" ng-click="reg.orden(llavep)" ng-hide="llavep === 'id_cargados'" style="min-width:180px">{{llavep}}:</th>
+				</tr>
+				</thead>
+				<tbody>
+					<tr role="button" ng-repeat="al in alus | filter:curso | orderBy:predicate:reverse track by $index" ng-disabled="al.Estado ==='Presente'" ng-click="reg.check(al)" ng-class="{'activo':al.activo, 'bg-primary':al.Estado == 'Presente'}">
+						<td ng-repeat="llave in llavesalus" style="min-width:180px" ng-hide="llave === 'id_cargados'">{{al[llave]}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+<div class="row no-gutter text-center">
+	<div class="col-md-12 col-xs-12 btn-primary guardar" role="button" ng-click="reg.cierra('presentes')">
+			Guardar!
+		</div>
+</div>
