@@ -34,7 +34,7 @@ session_start();?>
 </div>
 <?php }else{?>
 <div class="row">
-  <div class="col-md-12 col-xs-12">
+  <div class="col-md-12 col-xs-10">
     <div class="fadeInUp animated" ng-include="'alus.html'" onload="reg.ver()"></div>
   </div>
 </div>
